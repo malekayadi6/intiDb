@@ -1,0 +1,17 @@
+spring:
+    profiles:
+        active: dev
+mongodb:
+    primary:
+        host: 35.158.193.234
+        port: 27017
+        database: uaa-db
+    secondary:
+        host: 35.158.193.234
+        port: 27017
+        database: crm-db
+    tertiary:
+        host: 35.158.193.234
+        port: 27017
+        database: worksheet-db
+

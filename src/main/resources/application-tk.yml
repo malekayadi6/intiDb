@@ -1,0 +1,39 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the gateway.yml file.
+#
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        service-url:
+            defaultZone: http://erp-discovery-tk:8861/eureka/
+
+spring:
+    profiles:
+        active: tk
+    data:
+        mongodb:
+            uri: mongodb://uaa-db-tk:27017
+            database: uaa-db-tk
+
+server:
+    port: 8181
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here
+# ===================================================================
+
+application:
+    email:
+        base-url: http://ms-gateway-tk.dhm-it.fr

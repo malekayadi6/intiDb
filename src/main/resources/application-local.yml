@@ -1,0 +1,38 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the gateway.yml file.
+#
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    autoconfigure:
+        exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+
+    profiles:
+        active: local
+mongodb:
+    primary:
+        host: localhost
+        port: 27017
+        database: uaa-db
+    secondary:
+        host: localhost
+        port: 27017
+        database: crm-db
+    tertiary:
+        host: localhost
+        port: 27017
+        database: worksheet-db
+
+
+server:
+    port: 9999
+
+

@@ -1,0 +1,43 @@
+# ===================================================================
+# Spring Boot configuration for the "prod" profile.
+#
+# This configuration overrides the gateway.yml file.
+#
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        service-url:
+            defaultZone: http://erp-discovery:8761/eureka/
+
+spring:
+    profiles:
+        active: prod
+    data:
+        mongodb:
+            uri: mongodb://uaa-db:27017
+            database: uaa-db
+
+server:
+    port: 8081
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here
+# ===================================================================
+
+application:
+    email:
+        base-url: http://ms-gateway-prod.dhm-it.fr
